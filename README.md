@@ -4,8 +4,13 @@ Laravel Algolia Indexer is a Laravel package that simplifies the process of depl
 
 
 # Usage
-Include instructions on how to use your package.
+## Publish the Configuration File
+After installing the package, publish the configuration file using the following command:
+```bash
+ php artisan vendor:publish --provider="Laracore\LaravelAlgolia\LaravelAlgoliaServiceProvide" --tag="config"
+```
 
+This will create a __config/laracore-algolia.php__ file in your Laravel application.
 # Features
 - Seamless integration with Laravel models
 - Customizable indexing configurations

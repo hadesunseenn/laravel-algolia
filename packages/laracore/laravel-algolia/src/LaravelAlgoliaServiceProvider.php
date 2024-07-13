@@ -12,7 +12,10 @@ class LaravelAlgoliaServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Publish the config file
+        $this->publishes([
+            __DIR__.'/../config/laracore-algolia.php' => config_path('laracore-algolia.php'),
+        ], 'config');
     }
 
     /**
@@ -20,10 +23,16 @@ class LaravelAlgoliaServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Route::prefix('laravel-algolia')
-            ->as('laravel-algolia.')
+        Route::prefix('laracore-algolia')
+            ->as('laracore-algolia.')
             ->group(function () {
                 $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
             });
+
+
+        // Merge the package configuration
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/laracore-algolia.php', 'laracore-algolia'
+        );
     }
 }
