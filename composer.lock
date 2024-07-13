@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e8c3c14ff33b199b4a0838993eb8423",
+    "content-hash": "7f7c84e11ba3735ffeb47943c62d1dcc",
     "packages": [
         {
             "name": "brick/math",
@@ -1049,6 +1049,42 @@
                 }
             ],
             "time": "2023-12-03T19:50:20+00:00"
+        },
+        {
+            "name": "laracore/laravel-algolia",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/laracore/laravel-algolia",
+                "reference": "0623bf976f6e7a15f049bc6bba83ff306450929e"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laracore\\LaravelAlgolia\\LaravelAlgoliaServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laracore\\LaravelAlgolia\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Laracore",
+                    "email": "admin@laracore.in"
+                }
+            ],
+            "description": "A Laravel package that simplifies the process of deploying models to an Algolia index based on user-defined configurations. This package provides an easy and efficient way to integrate Algolia search into your Laravel applications, allowing you to customize which models and attributes are indexed.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "laravel/framework",
@@ -7821,7 +7857,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "laracore/laravel-algolia": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -1,0 +1,25 @@
+{
+    "name": "laracore/laravel-algolia",
+    "description": "A Laravel package that simplifies the process of deploying models to an Algolia index based on user-defined configurations. This package provides an easy and efficient way to integrate Algolia search into your Laravel applications, allowing you to customize which models and attributes are indexed.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Laracore",
+            "email": "admin@laracore.in"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Laracore\\LaravelAlgolia\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Laracore\\LaravelAlgolia\\LaravelAlgoliaServiceProvider"
+            ]
+        }
+    }
+}
