@@ -11,6 +11,6 @@ Include instructions on how to use your package.
 - Customizable indexing configurations
 - Support for various Algolia features and settings
 - Easy setup and deployment
-- Configuration
 
-# Explain how to configure the package to index specific models and attributes.
+# Configuration
+Explain how to configure the package to index specific models and attributes.
