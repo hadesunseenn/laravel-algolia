@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="{{ asset('laracore-algolia/css/app.css') }}" rel="stylesheet" />
     <title>LaraCore Algolia</title>
 </head>
 <body>

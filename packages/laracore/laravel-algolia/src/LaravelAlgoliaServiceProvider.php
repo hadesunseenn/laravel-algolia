@@ -12,10 +12,16 @@ class LaravelAlgoliaServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        // Publish the config file
-        $this->publishes([
-            __DIR__.'/../config/laracore-algolia.php' => config_path('laracore-algolia.php'),
-        ], 'config');
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../resources/assets' => public_path('laracore-algolia'),
+            ], 'laracore-algolia-assets');
+
+            // Publish the config file
+            $this->publishes([
+                __DIR__.'/../config' => config_path('laracore-algolia'),
+            ], 'laracore-algolia-config');
+        }
     }
 
     /**
