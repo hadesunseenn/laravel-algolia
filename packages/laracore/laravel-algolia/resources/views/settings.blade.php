@@ -19,23 +19,22 @@
                             </th>
                             <th scope="col"
                                 class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                                Actions
+                                Table
                             </th>
                             <th scope="col"></th>
                         </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200 bg-white">
-                        
+                            @foreach($allModels as $model)
                             <tr>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900 sm:pl-6">
-                                    Test
+                                <td class="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900 sm:pl-6 border-r border-gray-200">
+                                    {{ $model['model'] }}
+                                </td>
+                                <td class="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900 sm:pl-6 border-r border-gray-200">
+                                    {{ $model['table'] }}
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900 sm:pl-6">
-                                    Action
-                                </td>
-                            </tr>
+                            @endforeach
                     </table>
                 </div>
             </div>

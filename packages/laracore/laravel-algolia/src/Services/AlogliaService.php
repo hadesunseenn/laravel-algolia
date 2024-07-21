@@ -1,29 +1,14 @@
 <?php
 
-namespace Laracore\LaravelAlgolia\Http\Controllers;
+namespace Laracore\LaravelAlgolia\Services;
 
 use Exception;
-use Illuminate\Routing\Controller;
-use Laracore\LaravelAlgolia\Services\AlgoliaService;
 use Illuminate\Support\Facades\File;
 
-class AlgoliaController extends Controller
+class AlgoliaService
 {
- 
-    public function index()
-    {
-        return view('laracore-algolia::index');
-    }
-
-    public function settings()
-    {
-        $allModels = $this->listAllModels();
-        return view('laracore-algolia::settings', compact('allModels'));
-    }
-
     public static function listAllModels()
     {
-        $modelsAndTables = [];
         // get list of all models in app
         // Path to the models directory
         $modelsPath = app_path('Models');
@@ -57,7 +42,5 @@ class AlgoliaController extends Controller
                 throw new Exception("Class $class does not exist");
             }
         }
-        return $modelsAndTables;
     }
- 
 }

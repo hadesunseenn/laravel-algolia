@@ -19,7 +19,7 @@ class LaravelAlgoliaServiceProvider extends ServiceProvider
 
             // Publish the config file
             $this->publishes([
-                __DIR__.'/../config' => config_path('laracore-algolia'),
+                __DIR__.'/../config/laracore-algolia.php' => config_path('laracore-algolia.php'),
             ], 'laracore-algolia-config');
         }
     }
