@@ -29,6 +29,8 @@ class LaravelAlgoliaServiceProvider extends ServiceProvider
                 $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
             });
 
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laravel-algolia');
+
 
         // Merge the package configuration
         $this->mergeConfigFrom(

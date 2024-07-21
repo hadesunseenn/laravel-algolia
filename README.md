@@ -19,3 +19,9 @@ This will create a __config/laracore-algolia.php__ file in your Laravel applicat
 
 # Configuration
 Explain how to configure the package to index specific models and attributes.
+
+
+https://laraveldaily.com/lesson/create-laravel-package/dependencies-require-external-packages
+
+https://github.com/spatie/package-skeleton-laravel
+https://github.com/hadesunseenn/laravel-algolia
