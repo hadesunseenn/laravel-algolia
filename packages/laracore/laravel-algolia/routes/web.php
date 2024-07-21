@@ -3,4 +3,5 @@
 use Laracore\LaravelAlgolia\Http\Controllers\AlgoliaController;
 use Illuminate\Support\Facades\Route;
  
-Route::resource('algolia-index', AlgoliaController::class);
+
+Route::get('algolia-index', [AlgoliaController::class, 'index'])->name('index');
