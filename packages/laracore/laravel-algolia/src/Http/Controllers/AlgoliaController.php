@@ -9,7 +9,7 @@ class AlgoliaController extends Controller
  
     public function index()
     {
-        return view('laravel-algolia::index');
+        return view('laracore-algolia::index');
     }
  
 }
