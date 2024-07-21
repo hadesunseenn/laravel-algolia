@@ -11,5 +11,10 @@ class AlgoliaController extends Controller
     {
         return view('laracore-algolia::index');
     }
+
+    public function settings()
+    {
+        return view('laracore-algolia::settings');
+    }
  
 }
