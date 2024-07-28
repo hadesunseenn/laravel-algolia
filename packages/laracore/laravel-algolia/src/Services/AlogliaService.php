@@ -9,6 +9,7 @@ class AlgoliaService
 {
     public static function listAllModels()
     {
+        $modelsAndTables = [];
         // get list of all models in app
         // Path to the models directory
         $modelsPath = app_path('Models');
@@ -42,5 +43,8 @@ class AlgoliaService
                 throw new Exception("Class $class does not exist");
             }
         }
+        return $modelsAndTables;
     }
+
+    
 }

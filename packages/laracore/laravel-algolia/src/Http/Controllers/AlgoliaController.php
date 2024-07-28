@@ -6,9 +6,23 @@ use Exception;
 use Illuminate\Routing\Controller;
 use Laracore\LaravelAlgolia\Services\AlgoliaService;
 use Illuminate\Support\Facades\File;
+use Algolia\AlgoliaSearch\SearchClient;
+use Illuminate\Support\Facades\Log;
 
 class AlgoliaController extends Controller
 {
+    protected $algoliaClient;
+
+    public function __construct()
+    {
+        // $applicationId = config('laracore-algolia.application_id');
+        // $adminKey = config('laracore-algolia.admin_key');
+        // Log::info('AlgoliaController constructor'. $applicationId . ' ' . $adminKey);
+        $this->algoliaClient = SearchClient::create(
+            config('laracore-algolia.application_id'),
+            config('laracore-algolia.admin_key')
+        );
+    }
  
     public function index()
     {
@@ -18,9 +32,14 @@ class AlgoliaController extends Controller
     public function settings()
     {
         $allModels = $this->listAllModels();
-        return view('laracore-algolia::settings', compact('allModels'));
+        $configs = config('laracore-algolia');
+        $indexes = $this->getAllAloliaIndexes();
+        // dd($indexes);
+        return view('laracore-algolia::settings', compact('allModels', 'configs', 'indexes'));
+
     }
 
+    // TODO:: move this to a service
     public static function listAllModels()
     {
         $modelsAndTables = [];
@@ -58,6 +77,22 @@ class AlgoliaController extends Controller
             }
         }
         return $modelsAndTables;
+    }
+
+    //Todo::move this to a service
+    public function getAllAloliaIndexes()
+    {
+        try {
+            $indexes = $this->algoliaClient->listIndices();
+
+            // check if the indexes are empty
+            if (empty($indexes['items'])) {
+                throw new Exception('No indexes found');
+            }
+            return $indexes['items'];
+        } catch (\Exception $e) {
+            throw new Exception($e->getMessage());
+        }
     }
  
 }

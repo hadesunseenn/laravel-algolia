@@ -9,7 +9,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "algolia/algoliasearch-client-php": "^3.0"
+    },
     "autoload": {
         "psr-4": {
             "Laracore\\LaravelAlgolia\\": "src"
