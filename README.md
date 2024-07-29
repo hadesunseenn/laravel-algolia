@@ -12,12 +12,17 @@ Laravel Algolia Indexer is a Laravel package that simplifies the process of depl
 ## Publish the Configuration File
 After installing the package, publish the configuration file using the following command:
 ```
-php artisan vendor:publish --provider="Laracore\LaravelAlgolia\LaravelAlgoliaServiceProvider" --tag="laracore-algolia-assets"
+php artisan vendor:publish --provider="Laracore\LaravelAlgolia\LaravelAlgoliaServiceProvider" --tag="assets"
 ```
 
 # publish assets
 ```
-php artisan vendor:publish --provider="Laracore\LaravelAlgolia\LaravelAlgoliaServiceProvider" --tag="laracore-algolia-config"
+php artisan vendor:publish --provider="Laracore\LaravelAlgolia\LaravelAlgoliaServiceProvider" --tag="config"
+```
+
+# publish migrations
+```
+php artisan vendor:publish --provider="Laracore\LaravelAlgolia\LaravelAlgoliaServiceProvider" --tag="migrations"
 ```
 
 
